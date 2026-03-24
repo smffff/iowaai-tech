@@ -670,6 +670,50 @@ a, button, [role="button"], input, textarea, select {
   align-items: start;
 }
 
+.cohort-date-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(79, 142, 255, 0.07);
+  border: 1px solid rgba(79, 142, 255, 0.18);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+.cohort-date-banner.featured-banner {
+  background: rgba(245, 197, 24, 0.07);
+  border-color: rgba(245, 197, 24, 0.25);
+}
+.cohort-date-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+.cohort-date-value {
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  flex-shrink: 0;
+}
+.cohort-countdown {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.featured-banner .cohort-countdown {
+  color: var(--color-gold);
+}
+.price-per {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
 .cohort-card {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
@@ -1324,17 +1368,22 @@ a, button, [role="button"], input, textarea, select {
   <div class="container">
     <p class="eyebrow">◆ COHORT PROGRAMS</p>
     <h2 class="section-heading">Pick your track.</h2>
-    <p class="section-sub">Three levels, one community. All cohorts are live and built for Iowa schedules.</p>
+    <p class="section-sub">Three levels, real dates. All cohorts are live, interactive, and built for Iowa schedules — one session per week so it actually fits your life.</p>
 
     <div class="cohort-grid">
       <!-- Track 1: Intro -->
       <div class="cohort-card">
+        <div class="cohort-date-banner">
+          <span class="cohort-date-label">STARTS</span>
+          <span class="cohort-date-value">April 7, 2026</span>
+          <span id="countdown-intro" class="cohort-countdown"></span>
+        </div>
         <span class="cohort-badge blue">INTRO</span>
         <h3>AI Intro</h3>
-        <p class="cohort-subtitle">"First Steps"</p>
-        <p class="cohort-price">$297<span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted)">/person</span></p>
-        <p class="cohort-price-sub">Founding member pricing</p>
-        <p class="cohort-duration">4 weeks · 1 session/week · 90 min</p>
+        <p class="cohort-subtitle">First Steps</p>
+        <p class="cohort-price">$297<span class="price-per">/person</span></p>
+        <p class="cohort-price-sub">Founding member rate — limited spots</p>
+        <p class="cohort-duration">4 weeks &middot; Mondays 6–7:30pm CT &middot; Virtual</p>
         <ul class="cohort-features">
           <li>What is AI and where is it already?</li>
           <li>Tools tour: ChatGPT, Perplexity, Canva AI</li>
@@ -1342,17 +1391,22 @@ a, button, [role="button"], input, textarea, select {
           <li>Build your first AI workflow</li>
           <li>Certificate + community access</li>
         </ul>
-        <a href="#waitlist" class="btn btn-outline">Get Notified</a>
+        <a href="#waitlist" class="btn btn-outline cohort-cta">Reserve My Spot</a>
       </div>
 
       <!-- Track 2: Builder (featured) -->
       <div class="cohort-card featured">
+        <div class="cohort-date-banner featured-banner">
+          <span class="cohort-date-label">STARTS</span>
+          <span class="cohort-date-value">May 12, 2026</span>
+          <span id="countdown-builder" class="cohort-countdown"></span>
+        </div>
         <span class="cohort-badge gold">BUILDER</span>
         <h3>AI Builder</h3>
-        <p class="cohort-subtitle">"Level Up"</p>
-        <p class="cohort-price">$597<span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted)">/person</span></p>
-        <p class="cohort-price-sub">Founding member pricing</p>
-        <p class="cohort-duration">6 weeks · 1 session/week · 90 min</p>
+        <p class="cohort-subtitle">Level Up</p>
+        <p class="cohort-price">$597<span class="price-per">/person</span></p>
+        <p class="cohort-price-sub">Founding member rate — limited spots</p>
+        <p class="cohort-duration">6 weeks &middot; Tuesdays 6–7:30pm CT &middot; Virtual</p>
         <ul class="cohort-features">
           <li>Advanced prompting & AI workflows</li>
           <li>Automations: Zapier, Make, n8n with AI</li>
@@ -1361,17 +1415,22 @@ a, button, [role="button"], input, textarea, select {
           <li>Demo Day — present your project</li>
           <li>Portfolio project + community badge</li>
         </ul>
-        <a href="#waitlist" class="btn btn-primary">Get Notified</a>
+        <a href="#waitlist" class="btn btn-primary cohort-cta">Reserve My Spot</a>
       </div>
 
       <!-- Track 3: Professional -->
       <div class="cohort-card">
+        <div class="cohort-date-banner">
+          <span class="cohort-date-label">STARTS</span>
+          <span class="cohort-date-value">June 9, 2026</span>
+          <span id="countdown-pro" class="cohort-countdown"></span>
+        </div>
         <span class="cohort-badge purple">PROFESSIONAL</span>
         <h3>AI Professional</h3>
-        <p class="cohort-subtitle">"Build & Lead"</p>
-        <p class="cohort-price">$997<span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted)">/person</span></p>
-        <p class="cohort-price-sub">Founding member pricing</p>
-        <p class="cohort-duration">8 weeks · sessions + office hours · max 12</p>
+        <p class="cohort-subtitle">Build &amp; Lead</p>
+        <p class="cohort-price">$997<span class="price-per">/person</span></p>
+        <p class="cohort-price-sub">Max 12 seats — applications open</p>
+        <p class="cohort-duration">8 weeks &middot; Thursdays 6–7:30pm CT &middot; Virtual</p>
         <ul class="cohort-features">
           <li>AI strategy & change management</li>
           <li>Internal AI tools & automations</li>
@@ -1380,7 +1439,7 @@ a, button, [role="button"], input, textarea, select {
           <li>Personalized AI roadmap delivered</li>
           <li>Priority consulting access</li>
         </ul>
-        <a href="#waitlist" class="btn btn-outline">Get Notified</a>
+        <a href="#waitlist" class="btn btn-outline cohort-cta">Reserve My Spot</a>
       </div>
     </div>
   </div>
@@ -1626,6 +1685,41 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }
   });
 });
+
+// Cohort countdown timers
+(function() {
+  var cohorts = [
+    { id: 'countdown-intro',   date: new Date('2026-04-07T18:00:00-05:00') },
+    { id: 'countdown-builder', date: new Date('2026-05-12T18:00:00-05:00') },
+    { id: 'countdown-pro',     date: new Date('2026-06-09T18:00:00-05:00') }
+  ];
+
+  function updateCountdowns() {
+    var now = new Date();
+    cohorts.forEach(function(c) {
+      var el = document.getElementById(c.id);
+      if (!el) return;
+      var diff = c.date - now;
+      if (diff <= 0) {
+        el.textContent = 'Starting now!';
+        return;
+      }
+      var days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      if (days > 0) {
+        el.textContent = days + (days === 1 ? ' day away' : ' days away');
+      } else if (hours > 0) {
+        el.textContent = hours + 'h ' + mins + 'm away';
+      } else {
+        el.textContent = mins + 'm away';
+      }
+    });
+  }
+
+  updateCountdowns();
+  setInterval(updateCountdowns, 60000);
+})();
 </script>
 
 </body>
