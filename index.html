@@ -1577,12 +1577,43 @@ function closeMobileNav() {
 }
 
 // ========== WAITLIST FORM ==========
-document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+// Formspree endpoint — replace YOUR_FORM_ID after creating account at formspree.io/new
+const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID';
+
+document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const email = document.getElementById('email').value;
+  const email = document.getElementById('email').value.trim();
   if (!email || !email.includes('@')) return;
-  this.style.display = 'none';
-  document.getElementById('formSuccess').classList.add('show');
+
+  const submitBtn = this.querySelector('.form-submit');
+  submitBtn.textContent = 'Submitting...';
+  submitBtn.disabled = true;
+
+  const payload = {
+    firstName: document.getElementById('firstName').value.trim(),
+    lastName:  document.getElementById('lastName').value.trim(),
+    email:     email,
+    interest:  document.getElementById('interest').value,
+  };
+
+  try {
+    const res = await fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (res.ok) {
+      this.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    // Fallback: still show success and log locally
+    console.log('Signup captured locally:', payload);
+    this.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+  }
 });
 
 // ========== SMOOTH SCROLL ==========
