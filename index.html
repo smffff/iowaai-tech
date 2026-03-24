@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iowaai.tech — AI Consulting & Education for Iowa</title>
+<meta name="description" content="iowaai.tech brings hands-on AI education and consulting to Iowa businesses, entrepreneurs, and community builders. No tech background required.">
+<meta property="og:title" content="iowaai.tech — Iowa is ready for AI. Are you?">
+<meta property="og:description" content="Hands-on AI education and consulting for Iowa businesses, entrepreneurs, and community builders.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* ========== DESIGN TOKENS ========== */
+:root {
+  --font-body: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+  --text-3xl:  clamp(2.5rem, 1rem + 4vw, 5rem);
+  --text-hero: clamp(3rem, 0.5rem + 7vw, 6rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --content-wide: 1200px;
+}
+
+/* ========== DARK MODE (default) ========== */
+:root, [data-theme="dark"] {
+  --color-bg: #0b0f1a;
+  --color-surface: #111827;
+  --color-surface-2: #1a2035;
+  --color-border: #1e2a42;
+  --color-divider: #192238;
+  --color-text: #e8edf5;
+  --color-text-muted: #7a859a;
+  --color-text-faint: #4a5568;
+  --color-primary: #4f8eff;
+  --color-primary-hover: #3a7aee;
+  --color-gold: #f5c518;
+  --color-gold-hover: #dab115;
+  --color-purple: #a855f7;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+  --header-bg: rgba(11, 15, 26, 0.85);
+}
+
+/* ========== LIGHT MODE ========== */
+[data-theme="light"] {
+  --color-bg: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0f2f5;
+  --color-border: #d4d9e2;
+  --color-divider: #e2e6ed;
+  --color-text: #1a1f2e;
+  --color-text-muted: #5a6478;
+  --color-text-faint: #9aa3b4;
+  --color-primary: #2b6ce6;
+  --color-primary-hover: #1f5dd4;
+  --color-gold: #c9a200;
+  --color-gold-hover: #a88800;
+  --color-purple: #7c3aed;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+  --header-bg: rgba(244, 245, 247, 0.85);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --color-bg: #f4f5f7;
+    --color-surface: #ffffff;
+    --color-surface-2: #f0f2f5;
+    --color-border: #d4d9e2;
+    --color-divider: #e2e6ed;
+    --color-text: #1a1f2e;
+    --color-text-muted: #5a6478;
+    --color-text-faint: #9aa3b4;
+    --color-primary: #2b6ce6;
+    --color-primary-hover: #1f5dd4;
+    --color-gold: #c9a200;
+    --color-gold-hover: #a88800;
+    --color-purple: #7c3aed;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+    --header-bg: rgba(244, 245, 247, 0.85);
+  }
+}
+
+/* ========== BODY ========== */
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.15; }
+p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
+
+::selection {
+  background: rgba(79, 142, 255, 0.25);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+button { cursor: pointer; background: none; border: none; }
+
+a, button, [role="button"], input, textarea, select {
+  transition: color var(--transition-interactive),
+              background var(--transition-interactive),
+              border-color var(--transition-interactive),
+              box-shadow var(--transition-interactive);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+}
+
+/* ========== UTILITY ========== */
+.container {
+  width: 100%;
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding-inline: var(--space-6);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+
+.section-sub {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition-interactive);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  box-shadow: 0 0 20px rgba(79, 142, 255, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-gold {
+  background: var(--color-gold);
+  color: #0b0f1a;
+  border-color: var(--color-gold);
+  font-weight: 700;
+}
+.btn-gold:hover {
+  background: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
+  box-shadow: 0 0 20px rgba(245, 197, 24, 0.3);
+}
+
+/* ========== HEADER ========== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.header.scrolled {
+  border-bottom-color: var(--color-divider);
+  box-shadow: var(--shadow-md);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+}
+.logo-mark { flex-shrink: 0; }
+.logo-text span { font-weight: 700; }
+.logo-text .ai { color: var(--color-gold); font-weight: 700; }
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-6);
+  list-style: none;
+}
+.nav-links a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-interactive);
+}
+.nav-links a:hover {
+  color: var(--color-text);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.theme-toggle {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  transition: all var(--transition-interactive);
+}
+.theme-toggle:hover {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.hamburger {
+  display: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+}
+.hamburger svg { pointer-events: none; }
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg);
+  z-index: 99;
+  padding: var(--space-8) var(--space-6);
+  flex-direction: column;
+  gap: var(--space-6);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.mobile-nav.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+.mobile-nav a {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+.mobile-nav .btn {
+  margin-top: var(--space-4);
+  justify-content: center;
+  font-size: var(--text-base);
+}
+
+@media (max-width: 768px) {
+  .nav-desktop { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: var(--space-16) 0 var(--space-12);
+}
+
+/* Dot grid background */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--color-text-faint) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.15;
+  animation: gridPulse 8s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-12);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: var(--space-6);
+}
+.hero h1 .blue { color: var(--color-primary); }
+.hero h1 .gold { color: var(--color-gold); }
+
+.hero-sub {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 540px;
+  margin-bottom: var(--space-8);
+  line-height: 1.7;
+  animation: fadeUp 0.8s 0.15s ease-out both;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+  animation: fadeUp 0.8s 0.3s ease-out both;
+}
+
+.social-proof {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  animation: fadeUp 0.8s 0.45s ease-out both;
+}
+
+.avatar-row {
+  display: flex;
+}
+.avatar-row .avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 2px solid var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-left: -0.5rem;
+}
+.avatar-row .avatar:first-child { margin-left: 0; }
+
+.social-proof-text {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+.social-proof-text strong {
+  color: var(--color-text);
+}
+
+/* Iowa SVG */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeUp 1s 0.3s ease-out both;
+}
+
+.iowa-svg-wrap {
+  position: relative;
+  filter: drop-shadow(0 0 40px rgba(79, 142, 255, 0.15));
+}
+
+@keyframes nodeGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.iowa-node {
+  animation: nodeGlow 3s ease-in-out infinite;
+}
+.iowa-node:nth-child(2) { animation-delay: 0.5s; }
+.iowa-node:nth-child(3) { animation-delay: 1s; }
+.iowa-node:nth-child(4) { animation-delay: 1.5s; }
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-sub { margin-inline: auto; }
+  .hero-ctas { justify-content: center; }
+  .social-proof { justify-content: center; }
+  .hero-visual { margin-top: var(--space-8); }
+  .iowa-svg-wrap svg { width: 260px; }
+}
+
+/* ========== MARQUEE ========== */
+.marquee-section {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+  padding: var(--space-4) 0;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 0 var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.marquee-item::before {
+  content: '·';
+  color: var(--color-primary);
+  font-size: 1.25rem;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ========== SERVICES ========== */
+.services {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+
+.service-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 0 24px rgba(79, 142, 255, 0.1), var(--shadow-lg);
+}
+
+.service-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(79, 142, 255, 0.1);
+  border-radius: var(--radius-lg);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-4);
+}
+
+.service-card h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.service-card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
+}
+
+.service-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== COHORT TRACKS ========== */
+.cohorts {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+  background: var(--color-surface);
+}
+
+.cohort-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+  align-items: start;
+}
+
+.cohort-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+.cohort-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.cohort-card.featured {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 32px rgba(245, 197, 24, 0.08);
+  position: relative;
+}
+.cohort-card.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  background: var(--color-gold);
+  color: #0b0f1a;
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.cohort-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  margin-bottom: var(--space-4);
+}
+.cohort-badge.blue {
+  background: rgba(79, 142, 255, 0.12);
+  color: var(--color-primary);
+}
+.cohort-badge.gold {
+  background: rgba(245, 197, 24, 0.12);
+  color: var(--color-gold);
+}
+.cohort-badge.purple {
+  background: rgba(168, 85, 247, 0.12);
+  color: var(--color-purple);
+}
+
+.cohort-card h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.cohort-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-4);
+}
+
+.cohort-price {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  margin-bottom: var(--space-1);
+}
+.cohort-price-sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.cohort-duration {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+  margin-bottom: var(--space-4);
+}
+
+.cohort-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  flex-grow: 1;
+}
+
+.cohort-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.cohort-features li::before {
+  content: '→';
+  color: var(--color-primary);
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.cohort-card .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .cohort-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+}
+
+/* ========== WAITLIST ========== */
+.waitlist {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+}
+
+.waitlist-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.waitlist-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  padding-top: var(--space-4);
+}
+
+.stat-item .stat-number {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.stat-item .stat-number.gold { color: var(--color-gold); }
+
+.stat-item .stat-label {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-top: var(--space-2);
+  line-height: 1.5;
+}
+
+.waitlist-form-wrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+.waitlist-form-wrap h3 {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+}
+
+.waitlist-form-wrap .form-sub {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.form-group label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  transition: border-color var(--transition-interactive);
+}
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(79, 142, 255, 0.15);
+}
+.form-group input::placeholder {
+  color: var(--color-text-faint);
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a859a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 2.5rem;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.form-privacy {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  margin-top: var(--space-3);
+  text-align: center;
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+}
+.form-success.show {
+  display: block;
+}
+.form-success .check-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: rgba(79, 142, 255, 0.12);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4);
+  font-size: 1.5rem;
+}
+.form-success h4 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+.form-success p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 360px;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .waitlist-inner { grid-template-columns: 1fr; }
+  .waitlist-stats { flex-direction: row; flex-wrap: wrap; gap: var(--space-6); }
+  .stat-item { flex: 1; min-width: 140px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ========== FOUNDERS ========== */
+.founders {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+  background: var(--color-surface);
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-10);
+}
+
+.founder-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.founder-avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
+}
+.founder-avatar.ss {
+  background: rgba(79, 142, 255, 0.12);
+  color: var(--color-primary);
+}
+.founder-avatar.sf {
+  background: rgba(245, 197, 24, 0.12);
+  color: var(--color-gold);
+}
+
+.founder-card h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.founder-role {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.founder-card .bio {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .founders-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== COMMUNITY CTA ========== */
+.community-cta {
+  padding: clamp(var(--space-12), 6vw, var(--space-20)) 0;
+  background: linear-gradient(135deg, rgba(79, 142, 255, 0.08), rgba(245, 197, 24, 0.06));
+  border-top: 1px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.community-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(79, 142, 255, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.community-cta h2 {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  margin-bottom: var(--space-3);
+  position: relative;
+}
+
+.community-cta p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 560px;
+  margin: 0 auto var(--space-6);
+  line-height: 1.6;
+  position: relative;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: var(--space-12) 0 var(--space-8);
+  border-top: 1px solid var(--color-divider);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.footer-tagline {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-6);
+  list-style: none;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-interactive);
+}
+.footer-links a:hover { color: var(--color-text); }
+
+.footer-bottom {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+.footer-bottom p, .footer-bottom a {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+.footer-bottom a {
+  text-decoration: none;
+  transition: color var(--transition-interactive);
+}
+.footer-bottom a:hover { color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo" aria-label="iowaai.tech home">
+      <svg class="logo-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="2" y="6" width="4" height="18" rx="2" fill="currentColor"/>
+        <circle cx="4" cy="4" r="2.5" fill="#4f8eff"/>
+        <path d="M14 24c-4.5 0-8-3.5-8-8s3.5-8 8-8c2.5 0 4.8 1.2 6.2 3" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <circle cx="20.2" cy="11" r="2" fill="#4f8eff"/>
+      </svg>
+      <span class="logo-text">iowa<span>ai</span><span class="ai">.tech</span></span>
+    </a>
+
+    <nav class="nav-desktop">
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#cohorts">Cohorts</a></li>
+        <li><a href="#founders">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+      </div>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu" id="menuBtn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#cohorts" onclick="closeMobileNav()">Cohorts</a>
+  <a href="#founders" onclick="closeMobileNav()">About</a>
+  <a href="#waitlist" class="btn btn-primary" onclick="closeMobileNav()">Join Waitlist</a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <p class="eyebrow">◆ NOW FORMING — IOWA'S AI COMMUNITY</p>
+      <h1>Iowa is ready for <span class="blue">AI.</span><br><span class="gold">Are you?</span></h1>
+      <p class="hero-sub">iowaai.tech brings hands-on AI education and consulting to Iowa businesses, entrepreneurs, and community builders — no tech background required.</p>
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+        <a href="#cohorts" class="btn btn-outline">Explore Cohorts</a>
+      </div>
+      <div class="social-proof">
+        <div class="avatar-row">
+          <span class="avatar">SF</span>
+          <span class="avatar">SS</span>
+          <span class="avatar">MK</span>
+          <span class="avatar">JD</span>
+          <span class="avatar">+</span>
+        </div>
+        <p class="social-proof-text"><strong>50+ members</strong> already in Vibe DSM, Des Moines</p>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="iowa-svg-wrap">
+        <svg width="380" height="280" viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Map of Iowa with connected city nodes">
+          <!-- Iowa state outline -->
+          <path d="M12 48 L30 42 L55 38 L80 35 L120 30 L160 28 L200 27 L240 28 L280 30 L310 35 L335 40 L352 48 L358 55 L362 70 L368 95 L370 120 L368 140 L360 165 L355 180 L365 195 L368 210 L362 225 L350 235 L330 238 L300 242 L260 245 L220 248 L180 250 L140 248 L100 245 L70 242 L45 238 L25 232 L15 220 L10 200 L8 170 L10 140 L12 110 L10 80 L12 48Z"
+            fill="rgba(79, 142, 255, 0.04)"
+            stroke="rgba(79, 142, 255, 0.25)"
+            stroke-width="1.5"/>
+
+          <!-- Connection lines -->
+          <line x1="170" y1="145" x2="285" y2="115" stroke="rgba(79, 142, 255, 0.2)" stroke-width="1"/>
+          <line x1="170" y1="145" x2="255" y2="170" stroke="rgba(79, 142, 255, 0.2)" stroke-width="1"/>
+          <line x1="285" y1="115" x2="330" y2="165" stroke="rgba(79, 142, 255, 0.2)" stroke-width="1"/>
+          <line x1="285" y1="115" x2="255" y2="170" stroke="rgba(79, 142, 255, 0.2)" stroke-width="1"/>
+          <line x1="255" y1="170" x2="330" y2="165" stroke="rgba(79, 142, 255, 0.15)" stroke-width="1"/>
+          <line x1="170" y1="145" x2="100" y2="130" stroke="rgba(79, 142, 255, 0.15)" stroke-width="1"/>
+          <line x1="100" y1="130" x2="60" y2="115" stroke="rgba(79, 142, 255, 0.12)" stroke-width="1"/>
+
+          <!-- City dots with glowing halos -->
+          <!-- Des Moines (capital, biggest) -->
+          <circle cx="170" cy="145" r="12" fill="rgba(79, 142, 255, 0.1)" class="iowa-node"/>
+          <circle cx="170" cy="145" r="5" fill="#4f8eff"/>
+          <text x="170" y="170" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(79, 142, 255, 0.7)">DES MOINES</text>
+
+          <!-- Cedar Rapids -->
+          <circle cx="285" cy="115" r="9" fill="rgba(79, 142, 255, 0.08)" class="iowa-node"/>
+          <circle cx="285" cy="115" r="4" fill="#4f8eff"/>
+          <text x="285" y="102" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="rgba(79, 142, 255, 0.6)">CEDAR RAPIDS</text>
+
+          <!-- Iowa City -->
+          <circle cx="255" cy="170" r="8" fill="rgba(79, 142, 255, 0.08)" class="iowa-node"/>
+          <circle cx="255" cy="170" r="3.5" fill="#4f8eff"/>
+          <text x="255" y="187" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="rgba(79, 142, 255, 0.6)">IOWA CITY</text>
+
+          <!-- Davenport -->
+          <circle cx="330" cy="165" r="8" fill="rgba(79, 142, 255, 0.08)" class="iowa-node"/>
+          <circle cx="330" cy="165" r="3.5" fill="#4f8eff"/>
+          <text x="330" y="182" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="rgba(79, 142, 255, 0.6)">DAVENPORT</text>
+
+          <!-- Sioux City -->
+          <circle cx="60" cy="115" r="7" fill="rgba(79, 142, 255, 0.06)" class="iowa-node"/>
+          <circle cx="60" cy="115" r="3" fill="rgba(79, 142, 255, 0.6)"/>
+          <text x="60" y="132" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(79, 142, 255, 0.5)">SIOUX CITY</text>
+
+          <!-- Waterloo -->
+          <circle cx="240" cy="85" r="6" fill="rgba(79, 142, 255, 0.06)" class="iowa-node"/>
+          <circle cx="240" cy="85" r="2.5" fill="rgba(79, 142, 255, 0.5)"/>
+
+          <!-- Council Bluffs -->
+          <circle cx="100" cy="130" r="6" fill="rgba(79, 142, 255, 0.06)" class="iowa-node"/>
+          <circle cx="100" cy="130" r="2.5" fill="rgba(79, 142, 255, 0.5)"/>
+
+          <!-- Extra scattered subtle dots for network feel -->
+          <circle cx="200" cy="100" r="1.5" fill="rgba(79, 142, 255, 0.25)"/>
+          <circle cx="140" cy="110" r="1.5" fill="rgba(79, 142, 255, 0.2)"/>
+          <circle cx="310" cy="130" r="1.5" fill="rgba(79, 142, 255, 0.2)"/>
+          <circle cx="180" cy="200" r="1.5" fill="rgba(79, 142, 255, 0.15)"/>
+          <circle cx="220" cy="140" r="1.5" fill="rgba(79, 142, 255, 0.2)"/>
+          <circle cx="130" cy="180" r="1.5" fill="rgba(79, 142, 255, 0.15)"/>
+          <circle cx="290" cy="200" r="1.5" fill="rgba(79, 142, 255, 0.15)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MARQUEE ========== -->
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">AI Coaching</span>
+    <span class="marquee-item">Done For You Automation</span>
+    <span class="marquee-item">Intro Cohorts</span>
+    <span class="marquee-item">Builder Track</span>
+    <span class="marquee-item">Professional Track</span>
+    <span class="marquee-item">Custom AI Solutions</span>
+    <span class="marquee-item">Iowa Built</span>
+    <span class="marquee-item">Vibe DSM Community</span>
+    <span class="marquee-item">AI Strategy</span>
+    <span class="marquee-item">No-Code Tools</span>
+    <span class="marquee-item">AI Coaching</span>
+    <span class="marquee-item">Done For You Automation</span>
+    <span class="marquee-item">Intro Cohorts</span>
+    <span class="marquee-item">Builder Track</span>
+    <span class="marquee-item">Professional Track</span>
+    <span class="marquee-item">Custom AI Solutions</span>
+    <span class="marquee-item">Iowa Built</span>
+    <span class="marquee-item">Vibe DSM Community</span>
+    <span class="marquee-item">AI Strategy</span>
+    <span class="marquee-item">No-Code Tools</span>
+  </div>
+</div>
+
+<!-- ========== SERVICES ========== -->
+<section class="services" id="services">
+  <div class="container">
+    <p class="eyebrow">◆ WHAT WE DO</p>
+    <h2 class="section-heading">AI services built for real people</h2>
+    <p class="section-sub">Whether you're just curious or ready to build, we have a track for you.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>Hand-Holding</h3>
+        <p>1:1 coaching to walk you through AI tools at your own pace. Virtual or in-person in Des Moines.</p>
+        <span class="service-tag">1:1 sessions — virtual or in-person</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Done For You</h3>
+        <p>We handle the AI setup so you don't have to. From automations to custom workflows — we build it.</p>
+        <span class="service-tag">Project-based engagements</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <h3>Cohort Programs</h3>
+        <p>Group learning at three levels. Learn alongside other Iowa builders with live instruction.</p>
+        <span class="service-tag">4–8 week programs · from $297</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Custom AI Solutions</h3>
+        <p>Enterprise-grade AI implementations tailored to your organization's specific needs.</p>
+        <span class="service-tag">Proposals available</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <h3>Consulting & Advisory</h3>
+        <p>Strategic AI guidance on a monthly retainer or hourly basis. Navigate the AI landscape with confidence.</p>
+        <span class="service-tag">From $1,000/mo</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌱</div>
+        <h3>Vibe DSM Community</h3>
+        <p>Monthly meetups and a digital hangout for Des Moines AI enthusiasts. Connect, learn, build together.</p>
+        <span class="service-tag">$49/mo · founding rate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COHORT TRACKS ========== -->
+<section class="cohorts" id="cohorts">
+  <div class="container">
+    <p class="eyebrow">◆ COHORT PROGRAMS</p>
+    <h2 class="section-heading">Pick your track.</h2>
+    <p class="section-sub">Three levels, one community. All cohorts are live and built for Iowa schedules.</p>
+
+    <div class="cohort-grid">
+      <!-- Track 1: Intro -->
+      <div class="cohort-card">
+        <span class="cohort-badge blue">INTRO</span>
+        <h3>AI Intro</h3>
+        <p class="cohort-subtitle">"First Steps"</p>
+        <p class="cohort-price">$297<span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted)">/person</span></p>
+        <p class="cohort-price-sub">Founding member pricing</p>
+        <p class="cohort-duration">4 weeks · 1 session/week · 90 min</p>
+        <ul class="cohort-features">
+          <li>What is AI and where is it already?</li>
+          <li>Tools tour: ChatGPT, Perplexity, Canva AI</li>
+          <li>Prompting basics — get what you need fast</li>
+          <li>Build your first AI workflow</li>
+          <li>Certificate + community access</li>
+        </ul>
+        <a href="#waitlist" class="btn btn-outline">Get Notified</a>
+      </div>
+
+      <!-- Track 2: Builder (featured) -->
+      <div class="cohort-card featured">
+        <span class="cohort-badge gold">BUILDER</span>
+        <h3>AI Builder</h3>
+        <p class="cohort-subtitle">"Level Up"</p>
+        <p class="cohort-price">$597<span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted)">/person</span></p>
+        <p class="cohort-price-sub">Founding member pricing</p>
+        <p class="cohort-duration">6 weeks · 1 session/week · 90 min</p>
+        <ul class="cohort-features">
+          <li>Advanced prompting & AI workflows</li>
+          <li>Automations: Zapier, Make, n8n with AI</li>
+          <li>AI for content, social & brand</li>
+          <li>No-code AI tools (Lovable, Bolt)</li>
+          <li>Demo Day — present your project</li>
+          <li>Portfolio project + community badge</li>
+        </ul>
+        <a href="#waitlist" class="btn btn-primary">Get Notified</a>
+      </div>
+
+      <!-- Track 3: Professional -->
+      <div class="cohort-card">
+        <span class="cohort-badge purple">PROFESSIONAL</span>
+        <h3>AI Professional</h3>
+        <p class="cohort-subtitle">"Build & Lead"</p>
+        <p class="cohort-price">$997<span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted)">/person</span></p>
+        <p class="cohort-price-sub">Founding member pricing</p>
+        <p class="cohort-duration">8 weeks · sessions + office hours · max 12</p>
+        <ul class="cohort-features">
+          <li>AI strategy & change management</li>
+          <li>Internal AI tools & automations</li>
+          <li>Custom GPTs & AI agents</li>
+          <li>Present your AI roadmap</li>
+          <li>Personalized AI roadmap delivered</li>
+          <li>Priority consulting access</li>
+        </ul>
+        <a href="#waitlist" class="btn btn-outline">Get Notified</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WAITLIST ========== -->
+<section class="waitlist" id="waitlist">
+  <div class="container waitlist-inner">
+    <div class="waitlist-stats">
+      <div class="stat-item">
+        <p class="stat-number">50+</p>
+        <p class="stat-label">Members in Vibe DSM</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number gold">3x</p>
+        <p class="stat-label">Cohort tracks launching</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">1</p>
+        <p class="stat-label">State. Building something Iowa can be proud of.</p>
+      </div>
+    </div>
+
+    <div class="waitlist-form-wrap">
+      <form id="waitlistForm">
+        <h3>Get on the list.</h3>
+        <p class="form-sub">Founding member pricing for early signups.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Jane" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="interest">I'm most interested in</label>
+          <select id="interest" name="interest" required>
+            <option value="" disabled selected>Select one...</option>
+            <option value="intro">AI Intro Cohort</option>
+            <option value="builder">AI Builder Cohort</option>
+            <option value="professional">AI Professional Track</option>
+            <option value="coaching">1:1 Coaching</option>
+            <option value="done-for-you">Done For You</option>
+            <option value="community">Vibe DSM Community</option>
+            <option value="custom">Custom Solution</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Join the Waitlist →</button>
+        <p class="form-privacy">No spam. Just updates when cohorts open.</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="check-icon">✓</div>
+        <h4>You're on the list!</h4>
+        <p>We'll reach out with founding member details and cohort dates. See you at the next Vibe DSM meetup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOUNDERS ========== -->
+<section class="founders" id="founders">
+  <div class="container">
+    <p class="eyebrow">◆ THE FOUNDERS</p>
+    <h2 class="section-heading">Built by Iowa builders, for Iowa builders.</h2>
+    <p class="section-sub">iowaai.tech was born out of real conversations in Des Moines — watching people get excited about AI but have no clear path to actually using it.</p>
+
+    <div class="founders-grid">
+      <div class="founder-card">
+        <div class="founder-avatar ss">SS</div>
+        <h3>Stephanie Stranko</h3>
+        <p class="founder-role">Co-Founder</p>
+        <p class="bio">AI entrepreneur and founder of Visible Healing Inc. Building emotional AI apps and running startup operations from Des Moines. Passionate about making AI accessible to everyone — not just developers.</p>
+      </div>
+      <div class="founder-card">
+        <div class="founder-avatar sf">SF</div>
+        <h3>Shaun Furman</h3>
+        <p class="founder-role">Co-Founder</p>
+        <p class="bio">Iowa tech community builder and co-organizer of Vibe DSM — a growing group of 50+ AI enthusiasts across Des Moines. Bringing the community energy to make this real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMMUNITY CTA ========== -->
+<section class="community-cta">
+  <div class="container">
+    <h2>Already part of Vibe DSM?</h2>
+    <p>Our community gets founding member access — special cohort pricing and first dibs on new programs.</p>
+    <a href="#waitlist" class="btn btn-gold">Claim Founding Access</a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="iowaai.tech home" style="font-size:var(--text-base);">
+          <svg class="logo-mark" width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="2" y="6" width="4" height="18" rx="2" fill="currentColor"/>
+            <circle cx="4" cy="4" r="2.5" fill="#4f8eff"/>
+            <path d="M14 24c-4.5 0-8-3.5-8-8s3.5-8 8-8c2.5 0 4.8 1.2 6.2 3" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <circle cx="20.2" cy="11" r="2" fill="#4f8eff"/>
+          </svg>
+          <span class="logo-text">iowa<span>ai</span><span class="ai">.tech</span></span>
+        </a>
+        <p class="footer-tagline">AI services for Iowa. Built by Iowa.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#cohorts">Cohorts</a></li>
+        <li><a href="#founders">About</a></li>
+        <li><a href="mailto:stephanie@taskbytask.net">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 iowaai.tech. All rights reserved.</p>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ========== THEME TOGGLE ==========
+(function() {
+  const root = document.documentElement;
+  let theme = 'dark';
+  root.setAttribute('data-theme', theme);
+
+  function updateIcons() {
+    const sunSvg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+    const moonSvg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+      btn.innerHTML = theme === 'dark' ? sunSvg : moonSvg;
+      btn.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+    });
+  }
+  updateIcons();
+
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', theme);
+      updateIcons();
+    });
+  });
+})();
+
+// ========== STICKY HEADER SHADOW ==========
+(function() {
+  const header = document.getElementById('header');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+
+// ========== MOBILE NAV ==========
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+let menuOpen = false;
+
+menuBtn.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  if (menuOpen) {
+    mobileNav.style.display = 'flex';
+    requestAnimationFrame(() => mobileNav.classList.add('open'));
+    menuBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+    document.body.style.overflow = 'hidden';
+  } else {
+    closeMobileNav();
+  }
+});
+
+function closeMobileNav() {
+  menuOpen = false;
+  mobileNav.classList.remove('open');
+  setTimeout(() => { mobileNav.style.display = ''; }, 250);
+  menuBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+  document.body.style.overflow = '';
+}
+
+// ========== WAITLIST FORM ==========
+document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  if (!email || !email.includes('@')) return;
+  this.style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+});
+
+// ========== SMOOTH SCROLL ==========
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
