@@ -999,65 +999,28 @@ a, button, [role="button"], input, textarea, select {
   background: var(--color-surface);
 }
 
-.founders-grid {
+.about-blocks {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-8);
   margin-top: var(--space-10);
 }
 
-.founder-card {
+.about-block {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
-.founder-avatar {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-4);
-}
-.founder-avatar.ss {
-  background: rgba(79, 142, 255, 0.12);
-  color: var(--color-primary);
-}
-.founder-avatar.sf {
-  background: rgba(245, 197, 24, 0.12);
-  color: var(--color-gold);
-}
-
-.founder-card h3 {
-  font-size: var(--text-lg);
-  font-weight: 700;
-  margin-bottom: var(--space-1);
-}
-
-.founder-role {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-primary);
-  margin-bottom: var(--space-4);
-}
-
-.founder-card .bio {
-  font-size: var(--text-sm);
+.about-block p {
+  font-size: var(--text-base);
   color: var(--color-text-muted);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 @media (max-width: 768px) {
-  .founders-grid { grid-template-columns: 1fr; }
+  .about-blocks { grid-template-columns: 1fr; }
 }
 
 /* ========== COMMUNITY CTA ========== */
@@ -1177,7 +1140,7 @@ a, button, [role="button"], input, textarea, select {
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#cohorts">Cohorts</a></li>
-        <li><a href="#founders">About</a></li>
+        <li><a href="#about">About</a></li>
       </ul>
       <div class="nav-actions">
         <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
@@ -1196,7 +1159,7 @@ a, button, [role="button"], input, textarea, select {
 <nav class="mobile-nav" id="mobileNav">
   <a href="#services" onclick="closeMobileNav()">Services</a>
   <a href="#cohorts" onclick="closeMobileNav()">Cohorts</a>
-  <a href="#founders" onclick="closeMobileNav()">About</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
   <a href="#waitlist" class="btn btn-primary" onclick="closeMobileNav()">Join Waitlist</a>
 </nav>
 
@@ -1506,19 +1469,17 @@ a, button, [role="button"], input, textarea, select {
   </div>
 </section>
 
-<!-- ========== FOUNDERS ========== -->
-<section class="founders" id="founders">
+<!-- ========== ABOUT ========== -->
+<section class="founders" id="about">
   <div class="container">
-    <p class="eyebrow">◆ THE FOUNDER</p>
-    <h2 class="section-heading">Built by an Iowa builder, for Iowa builders.</h2>
-    <p class="section-sub">iowaai.tech was born out of real conversations in Des Moines — watching people get excited about AI but have no clear path to actually using it.</p>
-
-    <div class="founders-grid">
-      <div class="founder-card">
-        <div class="founder-avatar ss">SS</div>
-        <h3>Stephanie Stranko</h3>
-        <p class="founder-role">Founder</p>
-        <p class="bio">AI entrepreneur and founder of Visible Healing Inc. Building emotional AI apps and running startup operations from Des Moines. Passionate about making AI accessible to everyone — not just developers.</p>
+    <p class="eyebrow">◆ WHO WE ARE</p>
+    <h2 class="section-heading">Built in Iowa. Obsessed with making AI actually work for you.</h2>
+    <div class="about-blocks">
+      <div class="about-block">
+        <p>We're Iowa-based entrepreneurs and operators who got tired of watching smart people get left behind by AI — not because they weren't capable, but because nobody would just sit down and show them how.</p>
+      </div>
+      <div class="about-block">
+        <p>Every service we offer comes from real experience building with AI in the real world — not theory, not slides. We've made the mistakes so you don't have to, and we're here to help you move fast.</p>
       </div>
     </div>
   </div>
@@ -1552,7 +1513,7 @@ a, button, [role="button"], input, textarea, select {
       <ul class="footer-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#cohorts">Cohorts</a></li>
-        <li><a href="#founders">About</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="mailto:stephanie@taskbytask.net">Contact</a></li>
       </ul>
     </div>
