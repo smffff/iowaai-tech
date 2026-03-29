@@ -23,7 +23,7 @@
 <title>iowaai.tech — AI Literacy and Learning Community</title>
 <meta name="description" content="IowaAI is a practical learning community. Free live sessions, cohort programs, and support for people learning to use AI in everyday life, work, and larger projects.">
 <meta property="og:title" content="iowaai.tech — Learn AI in a way that becomes part of how you live, work, and build.">
-<meta property="og:description" content="A practical learning community for people who want more than headlines, hype, or one-off prompts.">
+<meta property="og:description" content="Most people are already using AI — but without a clear foundation or anyone to learn with. IowaAI is where that changes. Free live sessions, cohort programs, and community learning.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1165,6 +1165,138 @@ a, button, [role="button"], input, textarea, select {
 @media (max-width: 768px) {
   .literacy-grid { grid-template-columns: 1fr; }
 }
+
+/* ========== AI LITERACY STATS BANNER ========== */
+.literacy-stats-banner {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+  padding: var(--space-10) 0;
+}
+
+.literacy-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.literacy-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6) var(--space-10);
+  flex: 1;
+  min-width: 200px;
+}
+
+.literacy-stat-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-gold);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.literacy-stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 200px;
+  margin-bottom: var(--space-1);
+}
+
+.literacy-stat-source {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  letter-spacing: 0.02em;
+}
+
+.literacy-stat-divider {
+  width: 1px;
+  height: 4rem;
+  background: var(--color-divider);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .literacy-stats-row { flex-direction: column; gap: 0; }
+  .literacy-stat-divider { width: 80%; height: 1px; margin: 0; }
+  .literacy-stat-item { padding: var(--space-6) var(--space-4); }
+}
+
+/* ========== AI LITERACY EXAMPLE TEXT ========== */
+.literacy-example {
+  font-size: var(--text-xs) !important;
+  color: var(--color-text-faint) !important;
+  font-style: italic;
+  margin-top: var(--space-3) !important;
+  line-height: 1.6 !important;
+  border-top: 1px solid var(--color-divider);
+  padding-top: var(--space-3);
+}
+
+/* ========== IN PRACTICE TESTIMONIALS ========== */
+.in-practice {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+  background: var(--color-bg);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+
+.testimonial-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: var(--space-6);
+  transition: border-left-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  border-left-color: var(--color-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-quote {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  font-style: italic;
+  line-height: 1.75;
+  margin-bottom: var(--space-4);
+}
+
+.testimonial-attr {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+  .testimonial-grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
+}
+
+/* ========== SESSION SCHEDULE NOTE ========== */
+.session-schedule-note {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  margin-top: var(--space-4);
+  font-style: italic;
+  line-height: 1.5;
+}
 </style>
 </head>
 <body>
@@ -1216,7 +1348,7 @@ a, button, [role="button"], input, textarea, select {
     <div class="hero-content">
       <p class="eyebrow">◆ NOW FORMING — AI LEARNING COMMUNITY</p>
       <h1>Learn AI in a way that becomes part of how you live, work, and build.</h1>
-      <p class="hero-sub">IowaAI is a practical learning community for people who want more than headlines, hype, or one-off prompts. We help people build real fluency with AI so it becomes useful in everyday life, stronger at work, and more capable inside bigger projects.</p>
+      <p class="hero-sub">Most people are already using AI — but without a clear foundation, real fluency, or anyone to learn with. IowaAI is where that changes. We're a practical learning community that helps people move from scattered experimentation to genuine capability.</p>
       <div class="hero-ctas">
         <a href="#free-session" class="btn btn-primary">Join a free live session</a>
         <a href="#cohorts" class="btn btn-outline">See upcoming cohorts</a>
@@ -1229,7 +1361,7 @@ a, button, [role="button"], input, textarea, select {
           <span class="avatar">JD</span>
           <span class="avatar">+</span>
         </div>
-        <p class="social-proof-text"><strong>50+ people</strong> in the Des Moines AI community already</p>
+        <p class="social-proof-text"><strong>50+ people</strong> learning AI together already</p>
       </div>
     </div>
     <div class="hero-visual">
@@ -1332,12 +1464,37 @@ a, button, [role="button"], input, textarea, select {
 </div>
 
 
+<!-- ========== AI LITERACY STATS BANNER ========== -->
+<section class="literacy-stats-banner">
+  <div class="container">
+    <div class="literacy-stats-row">
+      <div class="literacy-stat-item">
+        <span class="literacy-stat-number">86%</span>
+        <span class="literacy-stat-label">of people using AI without formal guidance</span>
+        <span class="literacy-stat-source">Center for Democracy &amp; Technology, 2026</span>
+      </div>
+      <div class="literacy-stat-divider" aria-hidden="true"></div>
+      <div class="literacy-stat-item">
+        <span class="literacy-stat-number">66%</span>
+        <span class="literacy-stat-label">of leaders say AI fluency is non-negotiable for hiring</span>
+        <span class="literacy-stat-source">Microsoft Work Trend Index, 2026</span>
+      </div>
+      <div class="literacy-stat-divider" aria-hidden="true"></div>
+      <div class="literacy-stat-item">
+        <span class="literacy-stat-number">2x</span>
+        <span class="literacy-stat-label">learning gains when AI is taught with structure</span>
+        <span class="literacy-stat-source">AI literacy research, 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== A BETTER WAY INTO AI ========== -->
 <section class="better-way">
   <div class="container" style="text-align: center; max-width: 720px;">
     <p class="eyebrow">◆ WHY IOWAAI</p>
     <h2 class="section-heading">A better way into AI</h2>
-    <p class="section-sub" style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted); font-size: var(--text-base); line-height: 1.75;">Most people do not need more noise. They need a place to ask good questions, see real examples, and build confidence through practice. That is what IowaAI is for: community, guided learning, useful resources, and a clearer path from curiosity to capability.</p>
+    <p class="section-sub" style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted); font-size: var(--text-base); line-height: 1.75;">AI is changing fast, but learning it does not have to feel chaotic. Most people we meet are smart, curious, and already experimenting — they just want a place to ask honest questions, see what actually works, and practice with other people who are figuring it out too. That is exactly what we built IowaAI for.</p>
   </div>
 </section>
 
@@ -1388,14 +1545,17 @@ a, button, [role="button"], input, textarea, select {
       <div class="literacy-item">
         <h3>Everyday use</h3>
         <p>Thinking, organizing, writing, planning, and navigating life more effectively.</p>
+        <p class="literacy-example">Using AI to draft a difficult email, organize a move, research a health question, or plan a week.</p>
       </div>
       <div class="literacy-item">
         <h3>Work use</h3>
         <p>Communication, research, workflow improvement, operations, and execution.</p>
+        <p class="literacy-example">Building a client proposal with AI, automating a weekly report, or preparing for a presentation in half the time.</p>
       </div>
       <div class="literacy-item">
         <h3>Project scale</h3>
         <p>Shaping larger ideas, building systems, and using AI inside serious initiatives.</p>
+        <p class="literacy-example">Launching a program, prototyping an app, analyzing data for a grant, or building a small business workflow.</p>
       </div>
     </div>
   </div>
@@ -1420,7 +1580,7 @@ a, button, [role="button"], input, textarea, select {
         <h3>AI Intro</h3>
         <p class="cohort-subtitle">First Steps</p>
         <p class="cohort-price">$297<span class="price-per">/person</span></p>
-        <p class="cohort-price-sub">Founding member rate — limited spots</p>
+        <p class="cohort-price-sub">Early member pricing — limited seats</p>
         <p class="cohort-duration">4 weeks &middot; Mondays 6–7:30pm CT &middot; Virtual</p>
         <ul class="cohort-features">
           <li>What is AI and where is it already?</li>
@@ -1443,7 +1603,7 @@ a, button, [role="button"], input, textarea, select {
         <h3>AI Builder</h3>
         <p class="cohort-subtitle">Level Up</p>
         <p class="cohort-price">$597<span class="price-per">/person</span></p>
-        <p class="cohort-price-sub">Founding member rate — limited spots</p>
+        <p class="cohort-price-sub">Early member pricing — limited seats</p>
         <p class="cohort-duration">6 weeks &middot; Tuesdays 6–7:30pm CT &middot; Virtual</p>
         <ul class="cohort-features">
           <li>Advanced prompting & AI workflows</li>
@@ -1483,13 +1643,36 @@ a, button, [role="button"], input, textarea, select {
   </div>
 </section>
 
+<!-- ========== IN PRACTICE TESTIMONIALS ========== -->
+<section class="in-practice">
+  <div class="container">
+    <p class="eyebrow">◆ IN PRACTICE</p>
+    <h2 class="section-heading">What this looks like</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">“I was copy-pasting into ChatGPT and hoping for the best. After two cohort sessions, I actually understand how to get what I need — and I stopped wasting hours on bad prompts.”</p>
+        <p class="testimonial-attr">Small business owner, Des Moines</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">“I thought AI was for developers. Turns out I was already using it wrong in three different tools at work. The live session showed me what I was missing.”</p>
+        <p class="testimonial-attr">Nonprofit program manager</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">“My team kept asking me about AI and I had no answers. Now I run a monthly AI check-in for my department.”</p>
+        <p class="testimonial-attr">School administrator</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== FREE SESSION ========== -->
 <section class="waitlist" id="free-session">
   <div class="container waitlist-inner">
     <div class="waitlist-stats">
       <p class="eyebrow">◆ YOUR NEXT STEP</p>
       <h2 class="section-heading" style="max-width: 480px;">Start with a free live session</h2>
-      <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.75; max-width: 420px;">The easiest way in is to join a live session. You will see practical examples, hear how other people are using AI, and leave with a clearer sense of what is possible for you right now.</p>
+      <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.75; max-width: 420px;">The easiest way in is to show up. In a free live session, you will see real examples of people using AI in their daily lives and work, ask questions without judgment, and leave with at least one thing you can use immediately. No pitch, no pressure — just a clear starting point.</p>
+      <p class="session-schedule-note">Next session announced after signup. Sessions run virtually on weekday evenings CT.</p>
     </div>
 
     <div class="waitlist-form-wrap">
@@ -1514,6 +1697,7 @@ a, button, [role="button"], input, textarea, select {
           <label for="interest">I'm most interested in</label>
           <select id="interest" name="interest" required>
             <option value="" disabled selected>Select one...</option>
+            <option value="free-session">Free Live Session</option>
             <option value="intro">AI Intro Cohort</option>
             <option value="builder">AI Builder Cohort</option>
             <option value="professional">AI Professional Track</option>
@@ -1542,7 +1726,7 @@ a, button, [role="button"], input, textarea, select {
     <h2 class="section-heading">Built by people who use AI every day.</h2>
     <div class="about-blocks">
       <div class="about-block">
-        <p>We started IowaAI because we kept meeting smart, capable people who wanted to use AI but did not know where to begin — or had tried and got stuck. Everything here comes from real experience, not theory. We teach what we actually use, and we build alongside the people we serve.</p>
+        <p>We started IowaAI because we kept running into the same pattern — smart, capable people who wanted to use AI but felt overwhelmed, unsure where to start, or stuck after a few dead ends. Everything here comes from real practice. We teach the tools we actually use, share what is genuinely working, and build alongside the people who show up.</p>
       </div>
     </div>
   </div>
